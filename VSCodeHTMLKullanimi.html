@@ -1,0 +1,187 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSCODE KULLANIMI</title>
+    <style>
+        body {
+            background-color: #202020;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .center-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .section {
+            margin-top: 8px;
+        }
+
+        .ms-auto {
+            margin-left: auto;
+        }
+
+        .me-auto {
+            margin-right: auto;
+        }
+
+        .w-auto {
+            width: fit-content;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+        }
+
+        .title {
+            margin-top: 16px;
+        }
+
+        .title::after {
+            content: attr(--data-title);
+            position: absolute;
+            left: 50%;
+            /* top: 8px; */
+            transform: translate(-50%, -5px);
+        }
+
+        code {
+            color: palevioletred;
+        }
+
+        my-note {
+            font-family: var(--code-font, monospace);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+
+            color: yellowgreen;
+        }
+
+        :is(code, my-note) {
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="center-flex center" style="">
+        <h3>Simge Açıklamaları:</h3>
+
+        <div>
+            <code>x + y</code>
+            <br>
+            <p>
+                <code>x</code> tuşuna basılı tutarken <code>y</code> tuşuna basın
+            </p>
+        </div>
+
+        <div>
+            <code>x > y</code>
+            <br>
+            <p>
+                <code>x</code> tuşuna bastıktan sonra <code>y</code> tuşuna basın
+            </p>
+        </div>
+
+        <div>
+            <p>Örnek: </p>
+            <code>CTRL + k > CTRL + c</code>
+            <br>
+            <p>
+                <code>CTRL</code> tuşuna basılı tutarken <code>k</code> tuşuna basın
+                <br>
+                ardından (elinizi çektikten sonra)
+                <br>
+                <code>CTRL</code> tuşuna bastıktan sonra <code>c</code> tuşuna basın
+                <br>
+                <br>
+                <my-note>
+                    Bu tuş kombinasyonu üzerinde bulunduğunuz satırı yorum satırı haline getirir
+                </my-note>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="center-flex center" style="">
+        <div class="section center-flex">
+            <h3>Klasör Açma</h3>
+            <hr>
+
+            <p>
+                VSCode u açdıktan sonra
+                <code>File (Dosya)</code> > <code>Open Folder... (Klasör Aç...)</code>
+                ile istenilen klasör açılabilir
+                <br>
+                <img src="Resources/OpenFolder.png" alt="">
+                <br>
+
+                <my-note>
+                    Klasör açmak görsel gibi dosyaların kullanılmasını kolaylaştırır ve yol tamamlanması için gereklidir
+                </my-note>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="center-flex center" style="">
+
+        <div class="section center-flex">
+
+            <h3>DOC Tamamlaması</h3>
+            <p>Bir dosya açtığınızda <code>doc</code> yazıp entera basarsanız HTML kalıbını yapıştırır </p>
+            <hr>
+            <img src="Resources/DocStart.png" alt="DocStart.png">
+            <hr>
+            <img src="Resources/DocRes.png" alt="">
+
+            <p>
+                <br>
+                <my-note>Bu bütün etiketler için geçerlidir, eğer <code>div</code> yazıp entera basarsanız
+                    <code>
+                        <span>&#60;</span>div<span>&#62;</span>
+
+                        <span>&#60;</span>/div<span>&#62;</span>
+                    </code>
+                    gelicektir
+                </my-note>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="center-flex center" style="">
+        <div class="section center-flex">
+
+            <h3>Yol Tamamlaması</h3>
+            <hr>
+
+            <p>Dosya belirlemeniz gereken yerlerde <code>CTRL + SPACE</code> tuşlarına basarsanız VSCode un
+                şuanda
+                açtığı klasörden kullanabileceğiniz dosyaları gösterir</p>
+            <img src="Resources/pathComplete.png" alt="">
+            <br>
+            <p>
+                <code>ENTER</code> a basmanız durumunda gösterilen dosya veya klasör yazılır
+            </p>
+            <img src="Resources/autocompletePathFolder.png" alt="">
+            <br>
+            <my-note>Ok <code>(↑↓)</code> tuşlarını kullanarak gösterlien dosyalar arasında seçim
+                yapabilirsiniz</my-note>
+        </div>
+    </div>
+
+
+    <div style="height: 100%;"></div>
+</body>
+
+</html>
