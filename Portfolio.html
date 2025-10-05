@@ -1,0 +1,176 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            color: white
+        }
+
+        .section {
+            border: solid 0px;
+            border-color: blueviolet;
+            border-top-width: 2px;
+            border-radius: 2px;
+            background-color: rgba(86, 86, 86, 0.4);
+            padding: 5px;
+            word-wrap: unset;
+        }
+
+        .section-title-small,
+        .section-title {
+            position: relative;
+            margin-bottom: +5px;
+        }
+
+        .section-title-small::after,
+        .section-title::after {
+            content: "";
+            position: absolute;
+
+            display: block;
+            /* transform: translateY(5px); */
+            width: 100%;
+
+            border-bottom: solid;
+            border-bottom-width: 1px;
+            border-radius: 1px;
+
+            border-bottom-color: gray;
+        }
+
+        .section-title-small::after {
+            border-bottom-color: white;
+        }
+
+        .comma-list {
+            padding-left: 0px;
+        }
+
+        .comma-list span::after {
+            content: ", ";
+            /* this was ment to make commas darker, but its too dark already ig */
+            color: white;
+        }
+
+        .comma-list span:last-child:after {
+            content: "";
+        }
+    </style>
+
+    <link rel="stylesheet" href="Resources/bootstrap/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <img src="Resources/background.png"
+        style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1;"></img>
+
+    <div class="container align-items-center" style="
+            width: 70%;
+        ">
+
+        <div class="w-auto mb-3">
+            <div class="ms-4 fs-1 fw-bold">Arda Eren</div>
+            <div class="ms-4 fs-4 fst-italic">PROGRAMMER</div>
+        </div>
+        <div class="container row">
+            <div class="col-4 section">
+                <div>
+                    <div class="section-title fs-3">Objective</div>
+                    Aspiring software developer
+                    with strong experience in C#.
+                    Seeking a role
+                    where I can contribute to
+                    building interactive applications,
+                    tools, or graphics systems.
+                </div>
+
+                <div>
+                    <div class="section-title fs-3">Contact</div>
+                    <ul>
+                        <li>Eskişehir, Turkey</li>
+                        <li>Poedx2@gmail.com</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="section-title fs-3">Education</div>
+                    <ul>
+                        <li>PROF. DR. ORHAN OĞUZ ANADOLU HIGH SCHOOL</li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-1">
+
+            </div>
+
+            <div class="col-7 section">
+                <div class="section-title fs-3">Projects</div>
+
+                <div class="ms-2 mb-2">
+                    <div class="section-title-small fs-4">RADEGL</div>
+                    A flexible and lightweight OpenGL rendering library built for ease of
+                    use and modern graphics development.
+                </div>
+                <div class="ms-2 mb-2">
+                    <div class="section-title-small fs-4">SGT</div>
+                    A tool designed to make System Generation process significantly
+                    easier in Starsector.
+                </div>
+                <div>
+                    <div class="section-title fs-4">Skills</div>
+
+                    <ul>
+                        <li>Proficient In:</li>
+                        <ul class="comma-list">
+                            <span>C#</span>
+                            <span>Java</span>
+                            <span>Dart</span>
+                            <span>Flutter</span>
+                            <span>Windows Forms</span>
+                            <span>OpenGL</span>
+                            <span>GLSL</span>
+                            <span>OpenCV</span>
+                            <span>WSL</span>
+                        </ul>
+
+                        <li>Haves Experience In:</li>
+                        <ul class="comma-list">
+                            <span>SQL</span>
+                            <span>JavaScript</span>
+                            <span>Lua</span>
+                            <span>PowerShell</span>
+                            <span>Git & GitHub</span>
+                            <span>JSON</span>
+                            <span>Firebase</span>
+                            <span>OpenGL rendering pipelines</span>
+                            <span>debugging tools (e.g.RenderDoc)</span>
+                        </ul>
+
+                        <li>Additional Skills:</li>
+                        <ul class="comma-list">
+                            <span>Java and C# reflection</span>
+                            <span>scripting language integration (LuaJ)</span>
+                            <span>cross-platform development (Windows/Linux)</span>
+                            <span>performance optimization</span>
+                            <span>code maintenance and documentation</span>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Resources/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
