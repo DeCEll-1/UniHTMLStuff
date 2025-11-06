@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="kisaKenar" id="kisaKenar" placeholder="Kısa Kenar">
+        <br>
+        <input type="text" name="uzunKenar" id="uzunKenar" placeholder="Uzun Kenar">
+        <br>
+        <input type="button" value="Hesapla" onclick="dikdortkenHesapla()">
+        <br>
+        <label id="output"></label>
+    </form>
+
+    <script>
+
+        function dikdortkenHesapla() {
+            const kisaKenarTextElement = document.getElementById("kisaKenar");
+
+            const uzunKenarTextElement = document.getElementById("uzunKenar");
+
+            const outputLabel = document.getElementById("output");
+
+            const kisa = parseInt(kisaKenarTextElement.value)
+            const uzun = parseInt(uzunKenarTextElement.value)
+
+            outputLabel.innerText =
+                "Alan:" + kisa * uzun +
+                "\nÇevre: " + (kisa + uzun) * 2
+                ;
+
+        }
+    </script>
+
+</body>
+
+</html>

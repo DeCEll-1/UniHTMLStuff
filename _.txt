@@ -1,0 +1,352 @@
+c#
+- primitives
+- if else
+- while
+- for
+- arrays
+
+tanımlar;
+primitive types     : temel tipler
+          if        : eğer
+          condition : şart
+          type      : tip (değişken tipi, string int vs)
+          syntax    : yazım kuralları
+
+yorum satırları;
+
+// bu bir yorum satırı olduğundan çalışmaz
+Console.WriteLine("Test1");
+Console.WriteLine("Test2"); // bu da bir yorum satırı, Console.WriteLine("Test2"); halen çalışır
+// Console.WriteLine("Test3"); // bütün satır yorum satırı olduğundan bu ifade çalışmaz
+
+syntax;
+ifadelerin sonuna noktalı virgül (;) konulur
+
+for (int i; i < 10; i++) // bu satır bir ifade olmadığından ; konulmaz
+{ // süslü parentezlerin sağına ; konulmaz
+    Console.WriteLine(i); // bu bir ifadedir
+}
+
+temel tipler;
+int    : 123 veya -123 gibi ondalık basamaklar olmadan tam sayıları (tam sayılar) depolar
+double : 19.99 veya -19.99 gibi ondalık basamaklar içeren kayan nokta sayılarını depolar
+char   : 'a' veya 'B' gibi tek karakterleri depolar. Char değerleri tek tırnak işaretiyle çevrilidir
+string : "Merhaba Dünya" gibi metinleri depolar. String değerleri çift tırnak işaretiyle çevrilidir
+bool   : iki durumdan birini depolar, true veya false
+
+değişken atama;
+type degiskenAdi = degiskenDegeri;
+
+örnek;
+
+int benimYasim = 20;
+Console.WriteLine(benimYasim);
+// > 20
+
+// aynı değere tekrar atama yapmak değerin üzerine yazar
+benimYasim = 25;
+Console.WriteLine(benimYasim);
+// > 25
+
+temel tipler;
+int;
+int benimElmalarim = 3;
+int seninElmalarin = 6;
+int toplamElmalar  = benimElmalarim+ seninElmalarin;
+Console.WriteLine(benimElmalarim);  // > 3
+Console.WriteLine(seninElmalarin);  // > 6
+Console.WriteLine(toplamElmalar);   // > 9
+
+int kucukSayim = 5;
+// sayiDegiskeniAdi++ sayıyı 1 arttırır
+kucukSayim++;
+Console.WriteLine(kucukSayim);
+// > 6
+kucukSayim--;
+Console.WriteLine(kucukSayim);
+// > 5
+
+// ekle/çıkar/çarp/böl ata operatörleride vardır
+int benimSayim = 3;
+benimSayim += 5;
+Console.WriteLine(benimSayim);
+// > 8
+
+benimSayim = 3;
+benimSayim -= 5;
+Console.WriteLine(benimSayim);
+// > -2
+
+benimSayim = 3;
+benimSayim *= 3;
+Console.WriteLine(benimSayim);
+// > 9
+
+benimSayim = 3;
+benimSayim /= 3;
+Console.WriteLine(benimSayim);
+// > 1
+
+benimSayim = 3;
+benimSayim %= 2; // % kalan operatörüdür, sayının bölümünden kalanını verir
+Console.WriteLine(benimSayim);
+// > 1
+
+
+
+int benimMaasim = 53_000; // sayıların arasına _ konulabilir,
+// int benimMaasim = 53_000;
+// ile
+// int benimMaasim = 53000;
+// aynı şeyi ifade eder
+
+// int (integer) türündeki sayılar -2_147_483_648 ile 2_147_483_647 arasında olmak zorundadır
+int dunyadakiToplamEvlerinSayisi = 2_300_000_000;
+// > CS0266 uint değeri int değerine atanamaz
+
+
+uint;
+// uint (unsigned integer) türündeki sayılar 0 ile 4_294_967_295 arasında olmak zorundadır
+uint dunyadakiToplamEvlerinSayisi = 2_300_000_000;
+Console.WriteLine(dunyadakiToplamEvlerinSayisi);
+// > 2300000000
+uint negatifSayim = -2;
+// > CS0031 sabit -2 değeri uinte dönüştürülemez
+
+long;
+
+// long türündeki sayılar -9_223_372_036_854_775_808 ile 9_223_372_036_854_775_807 arasında olmak zorundadır
+long buyukDegiskenim = 6_312_642_026_884_735_232;
+Console.WriteLine(buyukDegiskenim);
+// > 6312642026884735232
+
+ulong;
+// ulong türündeki sayılar 0 ile 18_446_744_073_709_551_615 arasında olmak zorundadır
+ulong cokBuyukDegiskenim = 18_446_744_073_709_551_615;
+Console.WriteLine(cokBuyukDegiskenim);
+// > 18446744073709551615
+
+ondalıklılar;
+// float double ve decimal ondalıklı değerleri barındırabilir
+float   dolarToTL = 42.12f;
+double  TLToDolar = 0.024;
+decimal TLToEuro  = 0.021;
+
+// float (veya single) değerler için sayının sonuna f koyulmalıdır, sonunda f olmayan ondalıklı sayılar otomatik olarak double olur
+Console.WriteLine((0.0).GetType()); // get type değişkenin türünü söyler
+// > System.Double
+Console.WriteLine((0.0f).GetType());
+// > System.Single
+// sayının sonuna m koymak sayının decimal olduğunu ifade eder
+// decimal ifade ederken sonuna m konması zorunludur
+Console.WriteLine((0.0m).GetType());
+// > System.Decimal
+
+// ondalıklı sayı tipleri kesinliklerine göre ayrılır
+// float 1 keskinliğindedir (adının single olmasının nedeni budur)
+// double 2 keskinliğindedir 
+// decimal 4 keskinliğindedir
+
+// keskinliğin fazla olması ondalık değerinin daha net bir şekilde hesaplanmasını ifade eder
+// float 7~ basamağın ardından güvenilir sonuçlar vermez
+Console.WriteLine(1f / 3f);
+// > 0.33333334
+
+// double 15-16~ basamağa kadar hatasız kullanılabilir
+Console.WriteLine(0.1 + 0.2);
+// > 0.30000000000000004
+
+// decimal 28-29 basamağa kadar kullanılabilir
+Console.WriteLine(1m / 3m);
+// > 0.3333333333333333333333333333
+Console.WriteLine(0.1m + 0.2m);
+// > 0.3
+
+// float değerler ±1.5 x 10−45 ile ±3.4 x 1038 arasında olabilir
+// double değerler ±5.0 × 10−324 ile ±1.7 × 10308 arasında olabilir
+// decimal değerler ±1.0 x 10-28 to ±7.9228 x 1028 arasında olabilir
+
+bool;
+
+// true (doğru) veya false (yanlış) ifade etmek için kullanılır
+
+bool cSharpGercekMi = true;
+Console.WriteLine(cSharpGercekMi);
+// > true
+
+char;
+
+// tek bir yazı karakterini ifade eder
+
+// char tipi değerler tek tırnak (') arasına konulmalıdır
+char adiminBasHarfi = 'M';
+Console.WriteLine(adiminBasHarfi);
+// > M
+
+string;
+
+// metin ifade eder
+string adim = "Mahmud";
+
+Console.WriteLine(adim);
+// > Mahmud
+
+// içinin doldurulmasına gerek yoktur
+string bosDeger = "";
+
+Console.WriteLine(bosDeger);
+// > 
+// boş olduğu için hiç bir şey yazmaz
+
+// artı (+) işaretiyle yazılar birbirine yapıştırılabilir
+string soyAdim = "El Mahmud";
+
+Console.WriteLine(adim + soyAdim);
+// > MahmudEl Mahmud
+
+// birbirine yapışık olmasının nedeni boşluğunda bir karakter olması
+Console.WriteLine(adim + " " + soyAdim);
+// > Mahmud El Mahmud
+
+if ve else;
+
+// bir şarta göre kod çalıştırmak için kullanılır
+
+// temel şartlar:
+// a b'den küçük ise: a < b
+// a b'den küçük veya eşit ise: a <= b
+// a b'den büyük ise: a > b
+// a b'den büyük veya b'ye eşit ise: a >= b
+// a b'ye eşit ise: a == b
+// a b'ye eşit değil ise: a != b
+
+if (şart)
+{
+    // şart true (doğru) ise çalışacak olan kod
+}
+
+if (20 > 10)
+{
+    Console.WriteLine("20 10'dan büyüktür");
+}
+// > 20 10'dan büyüktür
+
+// değişkenler içinde kullanılabilir
+int x = 85;
+int y = 25;
+if (x > y)
+{
+    Console.WriteLine("x y'den büyüktür");
+}
+// > x y'den büyüktür
+
+// metinlerin birbirine eşit olup olmadığını bilmek içinde kullanılabilir
+string ad = "Hasan";
+string soyAd = "El Hasan";
+
+
+if (ad != soyAd)
+{
+    Console.WriteLine(ad + " ile " + soyAd + " birbirine eşit değildir");
+}
+// > Hasan ile El Hasan birbirine eşit değildir
+
+// else, ifin içindeki şart true değil ise çalışır
+if (20 > 80)
+{
+    Console.WriteLine("20 80'den büyüktür");
+}
+else
+{
+    Console.WriteLine("80 20'den büyüktür");
+}
+// > 80 20'den büyüktür
+
+// else if, önceki if doğru değilse ve kendi şartı doğruysa çalışır
+int gununSaati = 22;
+if (gununSaati < 10)
+{
+    Console.WriteLine("Günaydın.");
+}
+else if (gununSaati < 20)
+{ // günün saati 10dan büyük ve 20 den küçükse çalışır
+    Console.WriteLine("İyi Günler.");
+}
+else
+{
+    Console.WriteLine("İyi Akşamlar.");
+}
+// > İyi Akşamlar.
+
+while;
+
+while (şart)
+{
+    // şart true iken çalışıcak kod
+}
+
+int i = 0;
+while (i < 5)
+{
+    Console.WriteLine(i);
+    i++;
+}
+// > 0
+// > 1
+// > 2
+// > 3
+// > 4
+
+do while;
+
+// while ın içindeki şart true olduğu sürece do nun içini çalıştırır
+// ilk defa çalışırken şart false olsa bile do bir kerede olsa çalışır
+
+int i = 0;
+do 
+{
+    Console.WriteLine(i);
+    i++;
+}
+while (i < 5);
+// > 0
+// > 1
+// > 2
+// > 3
+// > 4
+
+int i = 500;
+do 
+{
+    Console.WriteLine(i);
+    i++;
+}
+while (i < 5);
+
+// > 500
+
+for;
+
+for (ifade 1; ifade 2; ifade 3) 
+{
+  // ifade 2 true iken çalışıcak olan kod
+}
+
+// ifade 1: for çalışmadan önce ilk ve tek defa çalışacak olan kod
+// ifade 2: kodun çalışmaya devam edip etmeyeceğini belirten şart
+// ifade 3: kod bloğunun içindeki kod her çalıştıktan sonra çalışacak olan kod
+
+for (
+    int i = 0; // for çalışmadan önce i adında bir değilken oluştur ve değişkene 0 ata
+    i < 5; // forun içindeki kod bloğunu i 5'den küçük olduğunca çalıştır
+    i++ // kod bloğu her çalıştığında i'yi 1 arttır
+    ) 
+{
+    Console.WriteLine(i);
+}
+
+// > 0
+// > 1
+// > 2
+// > 3
+// > 4

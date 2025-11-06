@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Temelleri</title>
+    <style>
+        h1,
+        h2,
+        h3 {
+            color: #fafafa;
+        }
+
+        code,
+        pre {
+            background: #131313;
+            color: #fafafa;
+            padding: 10px;
+            display: block;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        pre {
+            border-left: 4px solid #202020;
+            margin: 10px 0;
+        }
+
+        .keyword {
+            color: #ff7b72;
+        }
+
+        .comment {
+            color: #5c6370;
+            font-style: italic;
+        }
+
+        .string {
+            color: #98c379;
+        }
+
+        .number {
+            color: #d19a66;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #333;
+            margin: 30px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        body {
+            color: #dadada;
+            background-color: #1F1F1F;
+            font-family: monospace;
+        }
+
+        .function {
+            color: #DCDCAA
+        }
+
+        .variables {
+            color: #9CDCFE
+        }
+
+        .keyword {
+            color: #569CD6
+        }
+
+        .keyword-contextual {
+            color: #D8A0DF;
+        }
+
+        .type {
+            color: #4EC9B0
+        }
+
+        .control-keywords {
+            color: #C586C0
+        }
+
+        .numbers {
+            color: #B5CEA8
+        }
+
+        .comment {
+            color: #6A9955
+        }
+
+        .string {
+            color: #CE9178
+        }
+
+        .paranthesis {
+            color: #FFD700;
+        }
+
+        .operator {
+            color: #b4b4b4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>C# Temelleri</h1>
+
+    <div class="section">
+        <h2>Tanımlar</h2>
+        <pre>
+            primitive types : temel tipler
+            if              : eğer
+            condition       : şart
+            type            : tip (değişken tipi, string int vs)
+            syntax          : yazım kuralları
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Yorum Satırları</h2>
+        <pre>// bu bir yorum satırı olduğundan çalışmaz
+Console.WriteLine("Test1");
+Console.WriteLine("Test2"); // bu da bir yorum satırı, Console.WriteLine("Test2"); halen çalışır
+
+// Console.WriteLine("Test3"); // bütün satır yorum satırı olduğundan bu ifade çalışmaz
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>syntax</h2>
+        <pre>
+// ifadelerin sonuna noktalı virgül (;) konulur
+
+for (int i; i < 10; i++) // bu satır bir ifade olmadığından ; konulmaz
+{ // süslü parentezlerin sağına ; konulmaz
+    Console.WriteLine(i); // bu bir ifadedir
+}
+    </pre>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>temel Tipler </h2>
+        <pre>
+int    : 123 veya -123 gibi tam sayıları depolar
+double : 19.99 veya -19.99 gibi ondalıklı sayıları depolar
+char   : 'a' veya 'B' gibi tek karakterleri depolar
+string : "Merhaba Dünya" gibi metinleri depolar
+bool   : true veya false
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2></h2>
+        <pre>
+
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>değişken atama</h2>
+        <pre>
+
+type degiskenAdi = degiskenDegeri;
+
+// örnek
+
+int benimYasim = 20;
+Console.WriteLine(benimYasim);
+// > 20
+
+// aynı değere tekrar atama yapmak değerin üzerine yazar
+benimYasim = 25;
+Console.WriteLine(benimYasim);
+// > 25
+
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>int</h2>
+        <pre>
+
+int benimElmalarim = 3;
+int seninElmalarin = 6;
+int toplamElmalar  = benimElmalarim + seninElmalarin;
+Console.WriteLine(benimElmalarim);  // > 3
+Console.WriteLine(seninElmalarin);  // > 6
+Console.WriteLine(toplamElmalar);   // > 9
+
+int kucukSayim = 5;
+// sayiDegiskeniAdi++ sayıyı 1 arttırır
+kucukSayim++;
+Console.WriteLine(kucukSayim);
+// > 6
+kucukSayim--;
+Console.WriteLine(kucukSayim);
+// > 5
+
+// ekle/çıkar/çarp/böl ata operatörleride vardır
+int benimSayim = 3;
+benimSayim += 5;
+Console.WriteLine(benimSayim);
+// > 8
+
+benimSayim = 3;
+benimSayim -= 5;
+Console.WriteLine(benimSayim);
+// > -2
+
+benimSayim = 3;
+benimSayim *= 3;
+Console.WriteLine(benimSayim);
+// > 9
+
+benimSayim = 3;
+benimSayim /= 3;
+Console.WriteLine(benimSayim);
+// > 1
+
+benimSayim = 3;
+benimSayim %= 2; // % kalan operatörüdür, sayının bölümünden kalanını verir
+Console.WriteLine(benimSayim);
+// > 1
+
+int benimMaasim = 53_000; // sayıların arasına _ konulabilir,
+// int benimMaasim = 53_000;
+// ile
+// int benimMaasim = 53000;
+// aynı şeyi ifade eder
+
+// int (integer) türündeki sayılar -2_147_483_648 ile 2_147_483_647 arasında olmak zorundadır
+int dunyadakiToplamEvlerinSayisi = 2_300_000_000;
+// > CS0266 uint değeri int değerine atanamaz
+
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>uint</h2>
+        <pre>
+
+// uint (unsigned integer) türündeki sayılar 0 ile 4_294_967_295 arasında olmak zorundadır
+uint dunyadakiToplamEvlerinSayisi = 2_300_000_000;
+Console.WriteLine(dunyadakiToplamEvlerinSayisi);
+// > 2300000000
+uint negatifSayim = -2;
+// > CS0031 sabit -2 değeri uinte dönüştürülemez
+
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>long</h2>
+        <pre>
+// long türündeki sayılar -9_223_372_036_854_775_808 ile 9_223_372_036_854_775_807 arasında olmak zorundadır
+long buyukDegiskenim = 6_312_642_026_884_735_232;
+Console.WriteLine(buyukDegiskenim);
+// > 6312642026884735232
+
+ulong;
+// ulong türündeki sayılar 0 ile 18_446_744_073_709_551_615 arasında olmak zorundadır
+ulong cokBuyukDegiskenim = 18_446_744_073_709_551_615;
+Console.WriteLine(cokBuyukDegiskenim);
+// > 18446744073709551615
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>ondalıklar</h2>
+        <pre>
+// float double ve decimal ondalıklı değerleri barındırabilir
+float   dolarToTL = 42.12f;
+double  TLToDolar = 0.024;
+decimal TLToEuro  = 0.021;
+
+// float (veya single) değerler için sayının sonuna f koyulmalıdır, sonunda f olmayan ondalıklı sayılar otomatik olarak double olur
+Console.WriteLine((0.0).GetType()); // get type değişkenin türünü söyler
+// > System.Double
+Console.WriteLine((0.0f).GetType());
+// > System.Single
+// sayının sonuna m koymak sayının decimal olduğunu ifade eder
+// decimal ifade ederken sonuna m konması zorunludur
+Console.WriteLine((0.0m).GetType());
+// > System.Decimal
+
+// ondalıklı sayı tipleri kesinliklerine göre ayrılır
+// float 1 keskinliğindedir (adının single olmasının nedeni budur)
+// double 2 keskinliğindedir 
+// decimal 4 keskinliğindedir
+
+// keskinliğin fazla olması ondalık değerinin daha net bir şekilde hesaplanmasını ifade eder
+// float 7~ basamağın ardından güvenilir sonuçlar vermez
+Console.WriteLine(1f / 3f);
+// > 0.33333334
+
+// double 15-16~ basamağa kadar hatasız kullanılabilir
+Console.WriteLine(0.1 + 0.2);
+// > 0.30000000000000004
+
+// decimal 28-29 basamağa kadar kullanılabilir
+Console.WriteLine(1m / 3m);
+// > 0.3333333333333333333333333333
+Console.WriteLine(0.1m + 0.2m);
+// > 0.3
+
+// float değerler ±1.5 x 10−45 ile ±3.4 x 1038 arasında olabilir
+// double değerler ±5.0 × 10−324 ile ±1.7 × 10308 arasında olabilir
+// decimal değerler ±1.0 x 10-28 to ±7.9228 x 1028 arasında olabilir
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>bool</h2>
+        <pre>
+// true (doğru) veya false (yanlış) ifade etmek için kullanılır
+
+bool cSharpGercekMi = true;
+Console.WriteLine(cSharpGercekMi);
+// > true
+
+char;
+
+// tek bir yazı karakterini ifade eder
+
+// char tipi değerler tek tırnak (') arasına konulmalıdır
+char adiminBasHarfi = 'M';
+Console.WriteLine(adiminBasHarfi);
+// > M
+</pre>
+    </div>
+
+    <div class="section">
+        <h2>string</h2>
+        <pre>
+// metin ifade eder
+string adim = "Mahmud";
+
+Console.WriteLine(adim);
+// > Mahmud
+
+// içinin doldurulmasına gerek yoktur
+string bosDeger = "";
+
+Console.WriteLine(bosDeger);
+// > 
+// boş olduğu için hiç bir şey yazmaz
+
+// artı (+) işaretiyle yazılar birbirine yapıştırılabilir
+string soyAdim = "El Mahmud";
+
+Console.WriteLine(adim + soyAdim);
+// > MahmudEl Mahmud
+
+// birbirine yapışık olmasının nedeni boşluğunda bir karakter olması
+Console.WriteLine(adim + " " + soyAdim);
+// > Mahmud El Mahmud
+        </pre>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>if ve else</h2>
+        <pre>
+// bir şarta göre kod çalıştırmak için kullanılır
+
+// temel şartlar:
+// a b'den küçük ise: a < b
+// a b'den küçük veya eşit ise: a <= b
+// a b'den büyük ise: a > b
+// a b'den büyük veya b'ye eşit ise: a >= b
+// a b'ye eşit ise: a == b
+// a b'ye eşit değil ise: a != b
+
+if (şart)
+{
+    // şart true (doğru) ise çalışacak olan kod
+}
+
+if (20 > 10)
+{
+    Console.WriteLine("20 10'dan büyüktür");
+}
+// > 20 10'dan büyüktür
+
+// değişkenler içinde kullanılabilir
+int x = 85;
+int y = 25;
+if (x > y)
+{
+    Console.WriteLine("x y'den büyüktür");
+}
+// > x y'den büyüktür
+
+// metinlerin birbirine eşit olup olmadığını bilmek içinde kullanılabilir
+string ad = "Hasan";
+string soyAd = "El Hasan";
+
+
+if (ad != soyAd)
+{
+    Console.WriteLine(ad + " ile " + soyAd + " birbirine eşit değildir");
+}
+// > Hasan ile El Hasan birbirine eşit değildir
+
+// else, ifin içindeki şart true değil ise çalışır
+if (20 > 80)
+{
+    Console.WriteLine("20 80'den büyüktür");
+}
+else
+{
+    Console.WriteLine("80 20'den büyüktür");
+}
+// > 80 20'den büyüktür
+
+// else if, önceki if doğru değilse ve kendi şartı doğruysa çalışır
+int gununSaati = 22;
+if (gununSaati < 10)
+{
+    Console.WriteLine("Günaydın.");
+}
+else if (gununSaati < 20)
+{ // günün saati 10dan büyük ve 20 den küçükse çalışır
+    Console.WriteLine("İyi Günler.");
+}
+else
+{
+    Console.WriteLine("İyi Akşamlar.");
+}
+// > İyi Akşamlar.
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>while</h2>
+        <pre>
+while (şart)
+{
+    // şart true iken çalışıcak kod
+}
+
+int i = 0;
+while (i < 5)
+{
+    Console.WriteLine(i);
+    i++;
+}
+// > 0
+// > 1
+// > 2
+// > 3
+// > 4
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>do while</h2>
+        <pre>
+// while ın içindeki şart true olduğu sürece do nun içini çalıştırır
+// ilk defa çalışırken şart false olsa bile do bir kerede olsa çalışır
+
+int i = 0;
+do 
+{
+    Console.WriteLine(i);
+    i++;
+}
+while (i < 5);
+// > 0
+// > 1
+// > 2
+// > 3
+// > 4
+
+int i = 500;
+do 
+{
+    Console.WriteLine(i);
+    i++;
+}
+while (i < 5);
+
+// > 500
+    </pre>
+    </div>
+
+    <div class="section">
+        <h2>for</h2>
+        <pre>
+for (ifade 1; ifade 2; ifade 3) 
+{
+  // ifade 2 true iken çalışıcak olan kod
+}
+
+// ifade 1: for çalışmadan önce ilk ve tek defa çalışacak olan kod
+// ifade 2: kodun çalışmaya devam edip etmeyeceğini belirten şart
+// ifade 3: kod bloğunun içindeki kod her çalıştıktan sonra çalışacak olan kod
+
+for (
+    int i = 0; // for çalışmadan önce i adında bir değilken oluştur ve değişkene 0 ata
+    i < 5; // forun içindeki kod bloğunu i 5'den küçük olduğunca çalıştır
+    i++ // kod bloğu her çalıştığında i'yi 1 arttır
+    ) 
+{
+    Console.WriteLine(i);
+}
+
+// > 0
+// > 1
+// > 2
+// > 3
+// > 4
+    </pre>
+    </div>
+
+
+    <script>
+
+        const commentRegex = /^.*(\S*\/\/.*)/gm;
+        const numberRegex = /([0-9]+)|(?:\S*\/\/.*)/gm;
+        const functionRegex = /^(\s*)([^\.\s]*)(?:\.)([a-zA-Z]*)(\()([^\)]*)([^;]*)(;)/gm;
+        const keywordContextualRegex = /\b(?:break|case|continue|default|do|else|for|foreach|goto|if|return|switch|while|yield|catch|finally|throw|try)\b/g;
+        const keywordRegex = /\b(?:abstract\s|as\s|base\s|bool\s|byte\s|char\s|checked\s|class\s|const\s|decimal\s|delegate\s|double\s|enum\s|event\s|explicit\s|extern\s|false\s|fixed\s|float\s|implicit\s|in\s|int\s|interface\s|internal\s|is\s|lock\s|long\s|namespace\s|new\s|null\s|object\s|operator\s|out\s|override\s|params\s|private\s|protected\s|public\s|readonly\s|ref\s|sbyte\s|sealed\s|short\s|sizeof\s|stackalloc\s|static\s|string\s|struct\s|this\s|true\s|typeof\s|uint\s|ulong\s|unchecked\s|unsafe\s|ushort\s|using\s|virtual\s|void\s|volatile\s)\b/gm;
+        const operatorRegex = /(?<!\/|[a-zA-Z]|")(?:\+|-|\*|\/|!|\?|%|~|\^|%|>|<|&|\||=|:|&gt;|&lt;)(?!\/|[a-zA-Z]|")/gm;
+        const doubleOperatorRegex = /([a-zA-Z])(\+\+|\-\-)/gm;
+        const stringHighlight = /(?!\b)(?<!class=)("[^"]*")(?!>)(?!\b)/gm;
+
+        document.addEventListener('DOMContentLoaded', main, false);
+
+        function updateEL(el) {
+
+            el.innerHTML = el.innerHTML.replace(functionRegex, (match, group1, group2, group3, group4, group5, group6) => {
+                return match.replace(match,
+                    `${group1}<span class="type">${group2}</span>.<span class="function">${group3}</span><span class="paranthesis">${group4}</span>${group5}<span class="paranthesis">${group6}</span>;`
+                );
+            })
+            
+            el.innerHTML = el.innerHTML.replace(stringHighlight, (match, group1) => {
+                return `<span class="string">${group1}</span>`;
+            })
+
+            el.innerHTML = el.innerHTML.replace(numberRegex, (match, group1) => {
+                return match.replace(group1, `<span class="numbers">${group1}</span>`);
+            })
+
+            el.innerHTML = el.innerHTML.replace(keywordContextualRegex, (match) => {
+                return `<span class="keyword-contextual">${match}</span>`
+            })
+
+            el.innerHTML = el.innerHTML.replace(keywordRegex, (match) => {
+                return `<span class="keyword">${match}</span>`
+            })
+
+            el.innerHTML = el.innerHTML.replace(doubleOperatorRegex, (match, group1, group2) => {
+                return `${group1}<span class="operator">${group2}</span>`
+            })
+
+            el.innerHTML = el.innerHTML.replace(operatorRegex, (match) => {
+                return `<span class="operator">${match}</span>`
+            })
+
+            el.innerHTML = el.innerHTML.replace(commentRegex, (match, group1) => {
+                return match.replace(group1, `<span class="comment">${group1}</span>`);
+            })
+
+        }
+
+        function main() {
+            document.querySelectorAll("div pre").forEach(el => updateEL(el));
+        }
+
+    </script>
+
+</body>
+
+</html>

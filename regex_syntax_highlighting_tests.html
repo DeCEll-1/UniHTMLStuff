@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        body {
+            color: #dadada;
+            background-color: #1F1F1F;
+        }
+
+        .function {
+            color: #DCDCAA
+        }
+
+        .variables {
+            color: #9CDCFE
+        }
+
+        .keyword {
+            color: #569CD6
+        }
+
+        .keyword-contextual {
+            color: #D8A0DF;
+        }
+
+        .type {
+            color: #4EC9B0
+        }
+
+        .control-keywords {
+            color: #C586C0
+        }
+
+        .numbers {
+            color: #B5CEA8
+        }
+
+        .comment {
+            color: #6A9955
+        }
+
+        .string {
+            color: #CE9178
+        }
+
+        .paranthesis {
+            color: #FFD700;
+        }
+
+        .operator {
+            color: #b4b4b4;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+for (ifade 1; ifade 2; ifade 3) 
+{
+  // ifade 2 true iken çalışıcak olan kod
+}
+
+// ifade 1: for çalışmadan önce ilk ve tek defa çalışacak olan kod
+// ifade 2: kodun çalışmaya devam edip etmeyeceğini belirten şart
+// ifade 3: kod bloğunun içindeki kod her çalıştıktan sonra çalışacak olan kod
+
+for (
+    int i = 0; // for çalışmadan önce i adında bir değilken oluştur ve değişkene 0 ata
+    i &lt; 5; // forun içindeki kod bloğunu i 5'den küçük olduğunca çalıştır
+    i++ // kod bloğu her çalıştığında i'yi 1 arttır
+    )
+{
+    Console.WriteLine(i);
+}
+
+// &gt; 0
+// &gt; 1
+// &gt; 2
+// &gt; 3
+231
+// &gt; 4
+
+    </pre>
+
+    <script>
+        // group 1 is the commented characters
+        const commentRegex = /^.*(\S*\/\/.*)/gm;
+        const numberRegex = /([0-9]+)|(?:\S*\/\/.*)/gm;
+        const functionRegex = /^(\s*)(\S.*)(?:\.)([a-zA-Z]*)(\()(.*)(\))(;)/gm;
+        const keywordContextualRegex = /\b(?:break|case|continue|default|do|else|for|foreach|goto|if|return|switch|while|yield|catch|finally|throw|try)\b/g;
+        const keywordRegex = /\b(?:abstract\s|as\s|base\s|bool\s|byte\s|char\s|checked\s|class\s|const\s|decimal\s|delegate\s|double\s|enum\s|event\s|explicit\s|extern\s|false\s|fixed\s|float\s|implicit\s|in\s|int\s|interface\s|internal\s|is\s|lock\s|long\s|namespace\s|new\s|null\s|object\s|operator\s|out\s|override\s|params\s|private\s|protected\s|public\s|readonly\s|ref\s|sbyte\s|sealed\s|short\s|sizeof\s|stackalloc\s|static\s|string\s|struct\s|this\s|true\s|typeof\s|uint\s|ulong\s|unchecked\s|unsafe\s|ushort\s|using\s|virtual\s|void\s|volatile\s)\b/gm;
+        const operatorRegex = /(?<!\/|[a-zA-Z]|")(?:\+|-|\*|\/|!|\?|%|~|\^|%|>|<|&|\||=|:|&gt;|&lt;)(?!\/|[a-zA-Z]|")/gm;
+        const doubleOperatorRegex = /([a-zA-Z])(\+\+|\-\-)/gm;
+
+        document.addEventListener('DOMContentLoaded', main, false);
+
+        function main() {
+            const el = document.querySelector("pre");
+
+            el.innerHTML = el.innerHTML.replace(numberRegex, (match, group1) => {
+                return match.replace(group1, `<span class="numbers">${group1}</span>`);
+            })
+
+            el.innerHTML = el.innerHTML.replace(functionRegex, (match, group1, group2, group3, group4, group5, group6) => {
+                return match.replace(match,
+                    `${group1}<span class="type">${group2}</span>.<span class="function">${group3}</span><span class="paranthesis">${group4}</span>${group5}<span class="paranthesis">${group6}</span>;`
+                );
+            })
+
+            el.innerHTML = el.innerHTML.replace(keywordContextualRegex, (match) => {
+                return `<span class="keyword-contextual">${match}</span>`
+            })
+
+            el.innerHTML = el.innerHTML.replace(keywordRegex, (match) => {
+                return `<span class="keyword">${match}</span>`
+            })
+
+            el.innerHTML = el.innerHTML.replace(doubleOperatorRegex, (match, group1, group2) => {
+                return `${group1}<span class="operator">${group2}</span>`
+            })
+
+            el.innerHTML = el.innerHTML.replace(operatorRegex, (match) => {
+                return `<span class="operator">${match}</span>`
+            })
+
+            el.innerHTML = el.innerHTML.replace(commentRegex, (match, group1) => {
+                return match.replace(group1, `<span class="comment">${group1}</span>`);
+            })
+
+        }
+    </script>
+</body>
+
+</html>

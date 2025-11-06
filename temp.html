@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arda Eren | Programmer Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0a1440;
+            /* Lacivert */
+            color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #00205b, #0a1440);
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 4px solid #ffcc00;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #fff;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 10px 0 5px;
+            color: #ffcc00;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #d0d0d0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #101b4d;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 0 30px rgba(255, 204, 0, 0.15);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #ffcc00;
+            font-size: 1.6rem;
+            border-left: 6px solid #ffcc00;
+            padding-left: 12px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p,
+        li {
+            color: #eaeaea;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .contact,
+        .education,
+        .skills {
+            display: grid;
+            gap: 6px;
+        }
+
+        .projects h3 {
+            color: #ffcc00;
+            margin-bottom: 6px;
+        }
+
+        .projects p {
+            margin: 0 0 15px;
+            opacity: 0.9;
+        }
+
+        .skills-category {
+            margin-bottom: 15px;
+        }
+
+        .skills-category strong {
+            display: inline-block;
+            color: #ffcc00;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+            color: #aaa;
+            border-top: 1px solid #22337d;
+            margin-top: 40px;
+        }
+
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 40px rgba(255, 204, 0, 0.25);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/tr/8/86/Fenerbah%C3%A7e_SK.png" alt="Fenerbahçe Logo">
+        <h1>Arda Eren</h1>
+        <p>PROGRAMMER</p>
+    </header>
+
+    <div class="container">
+
+        <section class="objective">
+            <h2>Objective</h2>
+            <p>Aspiring software developer with strong experience in C#. Seeking a role where I can contribute to
+                building interactive applications, tools, or graphics systems.</p>
+        </section>
+
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>📍 Eskişehir, Turkey</p>
+            <p>📧 <a href="mailto:Poedx2@gmail.com">Poedx2@gmail.com</a></p>
+        </section>
+
+        <section class="education">
+            <h2>Education</h2>
+            <p><strong>Prof. Dr. Orhan Oğuz Anadolu High School</strong></p>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <h3>RADEGL</h3>
+            <p>A flexible and lightweight OpenGL rendering library built for ease of use and modern graphics
+                development.</p>
+
+            <h3>SGT</h3>
+            <p>A tool designed to make System Generation process significantly easier in Starsector.</p>
+        </section>
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skills-category">
+                <strong>Proficient In:</strong><br>
+                C#, Java, Dart, Flutter, Windows Forms, OpenGL, GLSL, OpenCV, WSL
+            </div>
+            <div class="skills-category">
+                <strong>Have Experience In:</strong><br>
+                SQL, JavaScript, Lua, PowerShell, Git & GitHub, JSON, Firebase, OpenGL rendering pipelines, debugging
+                tools (e.g. RenderDoc)
+            </div>
+            <div class="skills-category">
+                <strong>Additional Skills:</strong><br>
+                Java and C# reflection, scripting language integration (LuaJ), cross-platform development
+                (Windows/Linux), performance optimization, code maintenance and documentation
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Arda Eren — Built with 💛💙 and code | Fenerbahçe Forever
+    </footer>
+</body>
+
+</html>
