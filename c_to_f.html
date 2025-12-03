@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bişeler</title>
+</head>
+
+<body>
+    <p>santrigat > fahrenheit</p><label for="tb_c">Santigrat:</label><input type="text" id="tb_c"><button
+        id="btn_hesap_c"
+        onclick='alert("F: " + (parseFloat(document.getElementById("tb_c").value) * (9.0 / 5.0)))'>Hesap</button>
+
+    <p>üçgen alan</p>
+    <label for="tb_x">X:</label>
+    <input type="text" id="tb_x">
+    <label for="tb_y">Y:</label>
+    <input type="text" id="tb_y">
+    <button id="btn_hesap_alan">Hesap</button>
+
+    <script>
+        const tb_x_el = document.getElementById("tb_x");
+        const tb_y_el = document.getElementById("tb_y");
+        function hesapAlan() {
+            const x = parseFloat(tb_x_el.value);
+            const y = parseFloat(tb_y_el.value);
+
+            alert("Alan: " + ((x * y) / 2))
+        }
+        const buttonAlan = document.getElementById("btn_hesap_alan");
+        buttonAlan.onclick = hesapAlan;
+    </script>
+
+    <p>yaş</p>
+    <label for="tb_yas">Doğum Yılı:</label>
+    <input type="text" id="tb_yas">
+    <button id="btn_hesap_yas">Hesap</button>
+
+    <script>
+        const tb_yas_el = document.getElementById("tb_yas");
+
+        function hesapYas() {
+            const yil = parseInt(tb_yas_el.value);
+
+            alert("Yaş: " + (new Date().getFullYear() - yil))
+        }
+        const buttonYas = document.getElementById("btn_hesap_yas");
+        buttonYas.onclick = hesapYas;
+    </script>
+
+    <p>yaş</p>
+    <label for="tb_vize">Vize:</label>
+    <input type="text" id="tb_vize">
+    <label for="tb_final">Final:</label>
+    <input type="text" id="tb_final">
+    <button id="btn_hesap_ort">Hesap</button>
+
+    <script>
+        const tb_vise_el = document.getElementById("tb_vize");
+        const tb_final_el = document.getElementById("tb_final");
+        function hesapYas() {
+            const vize = parseFloat(tb_vise_el.value);
+            const final = parseFloat(tb_final_el.value);
+
+            alert("Ortalama: " + ((vize * 0.4) + (final * 0.6)))
+        }
+        const buttonOrt = document.getElementById("btn_hesap_ort");
+        buttonOrt.onclick = hesapYas;
+    </script>
+
+</body>
+
+</html>

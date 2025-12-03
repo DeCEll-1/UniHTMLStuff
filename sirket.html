@@ -1,0 +1,260 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şirket</title>
+    <style>
+        :root {
+            --darkest-color: #2f2504ff;
+            --dark-color: #594e36ff;
+            --med-color: #7e846bff;
+            --light-color: #a5ae9eff;
+            --lightest-color: #d0ddd7ff;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: var(--med-color);
+            color: var(--lightest-color);
+        }
+
+        .header-info {
+            width: 100%;
+            height: 126px;
+            background-color: var(--darkest-color);
+
+            /* border-style: solid;
+            border-color: var(--dark-color);
+            border-width: 0px;
+            border-bottom-width: 2px; */
+
+            transition: all 0.5s ease;
+        }
+
+        .footer-container,
+        .header {
+            width: 70%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            justify-content: space-between;
+            background-color: var(--darkest-color);
+            padding: 0px 15%;
+        }
+
+        a {
+            color: #8ec0ff;
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+        .footer-container {
+            padding: 0px 13%;
+        }
+
+        .header {
+            height: 48px;
+        }
+
+        .left-header {
+            margin: auto;
+            font-size: 22px;
+        }
+
+        .burger-menu {
+            margin: auto;
+            font-size: 40px;
+            padding: 0px 6px;
+            border-style: solid;
+            border-radius: 5px;
+            border-color: var(--light-color);
+            border-width: 2px;
+
+            line-height: 0.8;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .header-info-about {
+            margin-top: 8px;
+            color: var(--light-color);
+        }
+
+        .header-info-about h2 {
+            color: var(--lightest-color);
+            margin: 0px 0px 4px 0px;
+        }
+
+        .header-info-about div {
+            font-size: 18px;
+        }
+
+        .header-info-about ul {
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+        }
+
+
+        .center-stuff {
+            display: grid;
+            padding-top: 48px;
+            grid-template-columns: 20% 40% 20%;
+            background-color: var(--dark-color);
+
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .center-content {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+
+            text-align: center;
+        }
+
+        .album-stuff {
+            /* display: block; */
+            margin: 48px 0;
+            /* width: 100%; */
+            background-color: var(--med-color);
+            /* flex-grow: 1; */
+            min-height: fit-content;
+        }
+
+        .card-containers-grid {
+            margin-top: 48px;
+            display: grid;
+            margin: 0 10%;
+            grid-template-columns: repeat(3, 350px);
+            gap: 28px;
+            justify-content: space-between;
+            min-height: max-content;
+        }
+
+        .card {
+            border: solid 2px var(--dark-color);
+            background-color: var(--dark-color);
+            width: 346px;
+
+            border-radius: 3px;
+        }
+
+        .card .card-info {
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .card .card-image {
+            width: 346px;
+        }
+
+        .card .card-image img {
+            width: 346px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .card .card-footer {
+            text-align: left;
+            font-size: 22px;
+            padding: 8px 16px 16px 16px;
+            background-color: var(--light-color);
+            color: var(--darkest-color);
+            font-weight: 800;
+
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .footer {
+            height: fit-content;
+            background-color: var(--darkest-color);
+            padding: 40px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="header_info" class="header-info" style="margin-top: -128px;">
+        <div class="header" style="justify-content: space-between; grid-template-columns: 55% 30% ;">
+            <div class="header-info-about">
+                <h2>About</h2>
+                <div>
+                    Add some information about the album below, the author, or any other background context. Make it a
+                    few sentences long so folks can pick up some informative tidbits. Then, link them off to some social
+                    networking sites or contact information.
+                </div>
+            </div>
+
+            <div class="header-info-about">
+                <h2>Contact</h2>
+                <ul>
+                    <li>Follow on Twitter</li>
+                    <li>Like on Facebook</li>
+                    <li>Email me</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="left-header">
+            Spicy Crust Pizzeria
+        </div>
+        <div>&nbsp;</div>
+        <div class="burger-menu"
+            onclick='(header_info.style.marginTop=="-128px")?header_info.style.marginTop="0px":header_info.style.marginTop="-128px"'>
+            &equiv;
+        </div>
+    </div>
+
+    <div class="center-stuff">
+        <div></div>
+        <div class="center-content" style="flex-direction: column;">
+            <h1>Album Example</h1>
+            <p style="font-size: 22px;">
+                Something short and leading about the collection below—its contents, the creator, etc. Make it short and
+                sweet, but not too short so folks don't simply skip over it entirely.
+            </p>
+
+
+        </div>
+    </div>
+
+    <div class="album-stuff">
+        <div class="card-containers-grid" id="card_containers">
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container" style="justify-content: space-between; grid-template-columns: 55% 20%;">
+            <div class="header-info-about">
+                <div>
+                    Album example is © [-], but please download and customize it for yourself!
+                    <br><br>
+                    New to [-]? Visit the homepage or read our getting started guide.
+                </div>
+            </div>
+
+            <div class="header-info-about">
+                <a href="#" style="float:right; font-size: 18px;"> Back to top</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./sirket.js"></script>
+</body>
+
+</html>
