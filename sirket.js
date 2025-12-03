@@ -22,7 +22,7 @@ const card_contents = [
     {
         url: "https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_1280.jpg",
         info: "Spicy Fusion Pizza with Tandoori Toppings",
-        footer: "Spice Crust Pizzeria • Open until 11 PM"
+        footer: "Spicy Crust Pizzeria  • Open until 11 PM"
     },
     {
         url: "https://cdn.pixabay.com/photo/2014/05/18/11/25/pizza-346985_1280.jpg",
