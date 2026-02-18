@@ -59,6 +59,32 @@
         .comma-list span:last-child:after {
             content: "";
         }
+
+        body {
+            background: url('Resources/background.png') no-repeat center center fixed;
+            background-size: cover;
+            /* This is the key property */
+            /* Optional but helpful: */
+            background-position: center;
+            background-attachment: fixed;
+            /* Keeps it fixed while scrolling (optional) */
+        }
+
+        a:hover,
+        a:visited,
+        a:link,
+        a:active {
+            text-decoration: none;
+        }
+
+        a {
+            color: #BFBFDF;
+        }
+
+        a:visited {
+
+            color: #BFDFDF;
+        }
     </style>
 
     <link rel="stylesheet" href="Resources/bootstrap/dist/css/bootstrap.min.css">
@@ -67,11 +93,9 @@
 
 <body>
 
-    <img src="Resources/background.png"
-        style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: -1;"></img>
 
     <div class="container align-items-center" style="
-            width: 70%;
+            width: 100%;
         ">
 
         <div class="w-auto mb-3">
@@ -80,7 +104,7 @@
         </div>
 
         <div class="container row">
-            <div class="col-4 section">
+            <div class="col-lg-4 section">
                 <div>
                     <div class="section-title fs-3">Objective</div>
                     Aspiring software developer
@@ -106,15 +130,23 @@
                     </ul>
                 </div>
 
+                <div>
+                    <div class="section-title fs-3">Connections</div>
+                    <ul>
+                        <li><a href="https://github.com/DeCEll-1" target="_blank">Github</a></li>
+                        <li><a href="https://www.linkedin.com/in/arda-eren-983865313/" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+
 
 
             </div>
 
-            <div class="col-1">
-
+            <div class="col-lg-1">
+                <br>
             </div>
 
-            <div class="col-7 section">
+            <div class="col-lg-7 section">
                 <div class="section-title fs-3">Projects</div>
 
                 <div class="ms-2 mb-2">
